@@ -20,6 +20,7 @@ let currentTime = new Date();
 let deadline = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), 15, 0, 0);
 
 let timeLeft = deadline - currentTime;
+let currentHour = currentTime.getHours();
 let hoursLeft = Math.floor(timeLeft / (1000 * 60 * 60));
 let minutesLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
 let secondsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
@@ -48,6 +49,11 @@ chris.getToKnow = function(person) {
 setTimeout(function() {
   let userInput;
 
+  if (currentHour >= 15 && currentHour <=24) {
+    console.log(`Sorry, it's too late for today. Try again tomorrow :)`);
+    return;
+  }
+  
   do {
     userInput = prompt("Do you accept Chris's proposal? Type 'accept' to accept or 'another day' to reject.");
   } while (userInput !== "accept" && userInput !== "another day");
