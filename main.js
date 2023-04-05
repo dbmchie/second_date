@@ -62,7 +62,7 @@ setTimeout(function() {
       chris.talk(angel);
       chris.getToKnow(angel);
     }
-    console.log(`${angel.name} is feeling beeter after lots of hugs and attention`);
+    console.log(`${angel.name} is feeling better after lots of hugs and attention`);
 
     // Send email to chris with subject 'accepted' and body 'Hi Chris. I would love for you to come over this evening. What time?'
     let emailLink = document.createElement('a');
